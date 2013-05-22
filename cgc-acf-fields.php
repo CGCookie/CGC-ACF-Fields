@@ -195,4 +195,50 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => 0,
 	));
+	register_field_group(array (
+		'id' => 'acf_featured-posts',
+		'title' => 'Featured Posts',
+		'fields' => array (
+			array (
+				'post_type' => array (
+					0 => 'post',
+					1 => 'cgc_courses',
+					2 => 'cgc_lessons',
+				),
+				'max' => '',
+				'taxonomy' => array (
+					0 => 'all',
+				),
+				'filters' => array (
+					0 => 'search',
+				),
+				'result_elements' => array (
+					0 => 'post_type',
+					1 => 'post_title',
+				),
+				'key' => 'field_5193fe10e30fc',
+				'label' => 'Featured Posts',
+				'name' => 'featured_posts',
+				'type' => 'relationship',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'acf-options',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
 }
