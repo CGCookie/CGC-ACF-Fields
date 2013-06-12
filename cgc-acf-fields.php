@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: CGC ACF Fields
+ * Plugin Name: CGC Widgets
  */
 
 
@@ -241,4 +241,76 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => 0,
 	));
+	register_field_group(array (
+		'id' => 'acf_social-links',
+		'title' => 'Social Links',
+		'fields' => array (
+			array (
+				'default_value' => '',
+				'formatting' => 'html',
+				'key' => 'field_51b7e8cb8190f',
+				'label' => 'Facebook',
+				'name' => 'facebook_link',
+				'type' => 'text',
+			),
+			array (
+				'default_value' => '',
+				'formatting' => 'html',
+				'key' => 'field_51b7e8ec81910',
+				'label' => 'Twitter',
+				'name' => 'twitter_link',
+				'type' => 'text',
+			),
+			array (
+				'default_value' => '',
+				'formatting' => 'html',
+				'key' => 'field_51b7e8f081911',
+				'label' => 'Youtube',
+				'name' => 'youtube_link',
+				'type' => 'text',
+			),
+			array (
+				'default_value' => '',
+				'formatting' => 'html',
+				'key' => 'field_51b7e8fb81912',
+				'label' => 'Pinterest',
+				'name' => 'pinterest_link',
+				'type' => 'text',
+			),
+			array (
+				'default_value' => '',
+				'formatting' => 'html',
+				'key' => 'field_51b7e90581913',
+				'label' => 'RSS Feed',
+				'name' => 'rss_feed_link',
+				'type' => 'text',
+			),
+			array (
+				'default_value' => '',
+				'formatting' => 'html',
+				'key' => 'field_51b80744b2199',
+				'label' => 'Deviant Art',
+				'name' => 'deviant_art_link',
+				'type' => 'text',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'acf-options',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));	
 }
