@@ -6,20 +6,20 @@
 
 /**
  *  Install Add-ons
- *  
+ *
  *  The following code will include all 4 premium Add-Ons in your theme.
  *  Please do not attempt to include a file which does not exist. This will produce an error.
- *  
+ *
  *  All fields must be included during the 'acf/register_fields' action.
  *  Other types of Add-ons (like the options page) can be included outside of this action.
- *  
+ *
  *  The following code assumes you have a folder 'add-ons' inside your theme.
  *
  *  IMPORTANT
  *  Add-ons may be included in a premium theme as outlined in the terms and conditions.
  *  However, they are NOT to be included in a premium / free plugin.
  *  For more information, please read http://www.advancedcustomfields.com/terms-conditions/
- */ 
+ */
 
 
 /**
@@ -48,7 +48,7 @@ if(function_exists("register_field_group"))
 					'Free' => 'Logged In Users',
 				),
 				'default_value' => 'Regular',
-			),			
+			),
 			array (
 				'key' => 'field_5181332268d50',
 				'label' => 'Post Video',
@@ -79,7 +79,7 @@ if(function_exists("register_field_group"))
 			array (
 				'key' => 'field_5181334c68d51',
 				'label' => 'Post Video Embed Code',
-				'name' => 'cgc_vimeo_code',
+				'name' => 'cgc_video_code',
 				'type' => 'textarea',
 				'conditional_logic' => array (
 					'status' => 1,
@@ -94,7 +94,7 @@ if(function_exists("register_field_group"))
 				),
 				'default_value' => '',
 				'formatting' => 'html',
-			),			
+			),
 			array (
 				'key' => 'field_518eac18a64e4',
 				'label' => 'Post Video Duration',
@@ -213,7 +213,7 @@ if(function_exists("register_field_group"))
 					'order_no' => 0,
 					'group_no' => 3,
 				),
-			),			
+			),
 		),
 		'options' => array (
 			'position' => 'normal',
@@ -371,5 +371,5 @@ if(function_exists("register_field_group"))
 			),
 		),
 		'menu_order' => 0,
-	));		
+	));
 }
