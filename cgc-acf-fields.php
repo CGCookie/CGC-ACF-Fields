@@ -186,6 +186,15 @@ if(function_exists("register_field_group"))
 					'group_no' => 2,
 				),
 			),
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'cgc_resource',
+					'order_no' => 0,
+					'group_no' => 3,
+				),
+			),			
 		),
 		'options' => array (
 			'position' => 'normal',
@@ -312,5 +321,36 @@ if(function_exists("register_field_group"))
 			),
 		),
 		'menu_order' => 0,
-	));	
+	));
+	register_field_group(array (
+		'id' => 'acf_resources',
+		'title' => 'Resources',
+		'fields' => array (
+			array (
+				'key' => 'field_51ba50fd91f85',
+				'label' => 'Resource Images',
+				'name' => 'resource_images',
+				'type' => 'gallery',
+				'preview_size' => 'thumbnail',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'cgc_resource',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));		
 }
