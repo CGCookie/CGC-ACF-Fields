@@ -57,7 +57,7 @@ if(function_exists("register_field_group"))
 				'message' => 'Does this post have a video?',
 				'default_value' => 0,
 			),
-			array (
+/*			array (
 				'key' => 'field_5181334c68d51',
 				'label' => 'Post Video Embed Code',
 				'name' => 'post_video_embed_code',
@@ -75,7 +75,26 @@ if(function_exists("register_field_group"))
 				),
 				'default_value' => '',
 				'formatting' => 'html',
-			),
+			),*/
+			array (
+				'key' => 'field_5181334c68d51',
+				'label' => 'Post Video Embed Code',
+				'name' => 'cgc_vimeo_code',
+				'type' => 'textarea',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5181332268d50',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'formatting' => 'html',
+			),			
 			array (
 				'key' => 'field_518eac18a64e4',
 				'label' => 'Post Video Duration',
