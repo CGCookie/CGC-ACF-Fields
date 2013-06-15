@@ -36,14 +36,6 @@ if(function_exists("register_field_group"))
 		'title' => 'Additional Post Information',
 		'fields' => array(
 			array(
-				'default_value' => '',
-				'formatting' => 'html',
-				'key' => 'field_51bbce92b2aa0',
-				'label' => 'Test',
-				'name' => 'cgc_testfield',
-				'type' => 'text',
-			),
-			array(
 				'key' => 'field_518145b9f156b',
 				'label' => 'Who can see this post?',
 				'name' => 'cgc_post_type',
