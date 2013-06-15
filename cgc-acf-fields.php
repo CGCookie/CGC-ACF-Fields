@@ -31,25 +31,25 @@
 
 if(function_exists("register_field_group"))
 {
-	register_field_group(array (
+	register_field_group(array(
 		'id' => 'acf_additional-post-information',
 		'title' => 'Additional Post Information',
-		'fields' => array (
-			array (
+		'fields' => array(
+			array(
 				'key' => 'field_518145b9f156b',
 				'label' => 'Who can see this post?',
 				'name' => 'cgc_post_type',
 				'type' => 'select',
 				'multiple' => 0,
 				'allow_null' => 0,
-				'choices' => array (
+				'choices' => array(
 					'Regular' => 'Everyone',
 					'Citizen' => 'Citizen Members Only',
 					'Free' => 'Logged In Users',
 				),
 				'default_value' => 'Regular',
 			),
-			array (
+			array(
 				'key' => 'field_5181332268d50',
 				'label' => 'Post Video',
 				'name' => 'post_video',
@@ -57,15 +57,15 @@ if(function_exists("register_field_group"))
 				'message' => 'Does this post have a video?',
 				'default_value' => 0,
 			),
-/*			array (
+/*			array(
 				'key' => 'field_5181334c68d51',
 				'label' => 'Post Video Embed Code',
 				'name' => 'post_video_embed_code',
 				'type' => 'textarea',
-				'conditional_logic' => array (
+				'conditional_logic' => array(
 					'status' => 1,
-					'rules' => array (
-						array (
+					'rules' => array(
+						array(
 							'field' => 'field_5181332268d50',
 							'operator' => '==',
 							'value' => '1',
@@ -76,15 +76,15 @@ if(function_exists("register_field_group"))
 				'default_value' => '',
 				'formatting' => 'html',
 			),*/
-			array (
+			array(
 				'key' => 'field_5181334c68d51',
 				'label' => 'Post Video Embed Code',
 				'name' => 'cgc_video_code',
 				'type' => 'textarea',
-				'conditional_logic' => array (
+				'conditional_logic' => array(
 					'status' => 1,
-					'rules' => array (
-						array (
+					'rules' => array(
+						array(
 							'field' => 'field_5181332268d50',
 							'operator' => '==',
 							'value' => '1',
@@ -95,15 +95,15 @@ if(function_exists("register_field_group"))
 				'default_value' => '',
 				'formatting' => 'html',
 			),
-			array (
+			array(
 				'key' => 'field_518eac18a64e4',
 				'label' => 'Post Video Duration',
 				'name' => 'post_video_duration',
 				'type' => 'text',
-				'conditional_logic' => array (
+				'conditional_logic' => array(
 					'status' => 1,
-					'rules' => array (
-						array (
+					'rules' => array(
+						array(
 							'field' => 'field_5181332268d50',
 							'operator' => '==',
 							'value' => '1',
@@ -114,7 +114,7 @@ if(function_exists("register_field_group"))
 				'default_value' => '',
 				'formatting' => 'none',
 			),
-			array (
+			array(
 				'key' => 'field_5181335b68d52',
 				'label' => 'Source Files',
 				'name' => 'source_files',
@@ -122,13 +122,13 @@ if(function_exists("register_field_group"))
 				'message' => 'Does this post have source files available for download?',
 				'default_value' => 0,
 			),
-			array (
+			array(
 				'key' => 'field_5181338068d53',
 				'label' => 'Source File Links',
 				'name' => 'source_file_links',
 				'type' => 'repeater',
-				'sub_fields' => array (
-					array (
+				'sub_fields' => array(
+					array(
 						'key' => 'field_518eab58920c4',
 						'label' => 'File Name',
 						'name' => 'file_name',
@@ -137,7 +137,7 @@ if(function_exists("register_field_group"))
 						'default_value' => 'Source Files',
 						'formatting' => 'text',
 					),
-					array (
+					array(
 						'key' => 'field_518eab62920c5',
 						'label' => 'File URL',
 						'name' => 'file_url',
@@ -152,7 +152,7 @@ if(function_exists("register_field_group"))
 				'layout' => 'table',
 				'button_label' => 'Add File',
 			),
-			array (
+			array(
 				'key' => 'field_518133dd68d55',
 				'label' => 'Post Image Gallery',
 				'name' => 'cgc_image_gallery',
@@ -160,7 +160,7 @@ if(function_exists("register_field_group"))
 				'message' => 'Disable user gallery for this post?',
 				'default_value' => 0,
 			),
-			array (
+			array(
 				'key' => 'field_518133ff68d56',
 				'label' => 'Post Image Upload',
 				'name' => 'cgc_image_upload',
@@ -168,7 +168,7 @@ if(function_exists("register_field_group"))
 				'message' => 'Disable image upload to this post?',
 				'default_value' => 0,
 			),
-			array (
+			array(
 				'key' => 'field_518eac24a64e5',
 				'label' => '',
 				'name' => '',
@@ -177,9 +177,9 @@ if(function_exists("register_field_group"))
 				'formatting' => 'html',
 			),
 		),
-		'location' => array (
-			array (
-				array (
+		'location' => array(
+			array(
+				array(
 					'param' => 'post_type',
 					'operator' => '==',
 					'value' => 'post',
@@ -187,8 +187,8 @@ if(function_exists("register_field_group"))
 					'group_no' => 0,
 				),
 			),
-			array (
-				array (
+			array(
+				array(
 					'param' => 'post_type',
 					'operator' => '==',
 					'value' => 'cgc_courses',
@@ -196,8 +196,8 @@ if(function_exists("register_field_group"))
 					'group_no' => 1,
 				),
 			),
-			array (
-				array (
+			array(
+				array(
 					'param' => 'post_type',
 					'operator' => '==',
 					'value' => 'cgc_lessons',
@@ -205,8 +205,8 @@ if(function_exists("register_field_group"))
 					'group_no' => 2,
 				),
 			),
-			array (
-				array (
+			array(
+				array(
 					'param' => 'post_type',
 					'operator' => '==',
 					'value' => 'cgc_resource',
@@ -215,32 +215,32 @@ if(function_exists("register_field_group"))
 				),
 			),
 		),
-		'options' => array (
+		'options' => array(
 			'position' => 'normal',
 			'layout' => 'no_box',
-			'hide_on_screen' => array (
+			'hide_on_screen' => array(
 			),
 		),
 		'menu_order' => 0,
 	));
-	register_field_group(array (
+	register_field_group(array(
 		'id' => 'acf_featured-posts',
 		'title' => 'Featured Posts',
-		'fields' => array (
-			array (
-				'post_type' => array (
+		'fields' => array(
+			array(
+				'post_type' => array(
 					0 => 'post',
 					1 => 'cgc_courses',
 					2 => 'cgc_lessons',
 				),
 				'max' => '',
-				'taxonomy' => array (
+				'taxonomy' => array(
 					0 => 'all',
 				),
-				'filters' => array (
+				'filters' => array(
 					0 => 'search',
 				),
-				'result_elements' => array (
+				'result_elements' => array(
 					0 => 'post_type',
 					1 => 'post_title',
 				),
@@ -250,9 +250,9 @@ if(function_exists("register_field_group"))
 				'type' => 'relationship',
 			),
 		),
-		'location' => array (
-			array (
-				array (
+		'location' => array(
+			array(
+				array(
 					'param' => 'options_page',
 					'operator' => '==',
 					'value' => 'acf-options',
@@ -261,19 +261,19 @@ if(function_exists("register_field_group"))
 				),
 			),
 		),
-		'options' => array (
+		'options' => array(
 			'position' => 'normal',
 			'layout' => 'no_box',
-			'hide_on_screen' => array (
+			'hide_on_screen' => array(
 			),
 		),
 		'menu_order' => 0,
 	));
-	register_field_group(array (
+	register_field_group(array(
 		'id' => 'acf_social-links',
 		'title' => 'Social Links',
-		'fields' => array (
-			array (
+		'fields' => array(
+			array(
 				'default_value' => '',
 				'formatting' => 'html',
 				'key' => 'field_51b7e8cb8190f',
@@ -281,7 +281,7 @@ if(function_exists("register_field_group"))
 				'name' => 'facebook_link',
 				'type' => 'text',
 			),
-			array (
+			array(
 				'default_value' => '',
 				'formatting' => 'html',
 				'key' => 'field_51b7e8ec81910',
@@ -289,7 +289,7 @@ if(function_exists("register_field_group"))
 				'name' => 'twitter_link',
 				'type' => 'text',
 			),
-			array (
+			array(
 				'default_value' => '',
 				'formatting' => 'html',
 				'key' => 'field_51b7e8f081911',
@@ -297,7 +297,7 @@ if(function_exists("register_field_group"))
 				'name' => 'youtube_link',
 				'type' => 'text',
 			),
-			array (
+			array(
 				'default_value' => '',
 				'formatting' => 'html',
 				'key' => 'field_51b7e8fb81912',
@@ -305,7 +305,7 @@ if(function_exists("register_field_group"))
 				'name' => 'pinterest_link',
 				'type' => 'text',
 			),
-			array (
+			array(
 				'default_value' => '',
 				'formatting' => 'html',
 				'key' => 'field_51b7e90581913',
@@ -313,7 +313,7 @@ if(function_exists("register_field_group"))
 				'name' => 'rss_feed_link',
 				'type' => 'text',
 			),
-			array (
+			array(
 				'default_value' => '',
 				'formatting' => 'html',
 				'key' => 'field_51b80744b2199',
@@ -322,9 +322,9 @@ if(function_exists("register_field_group"))
 				'type' => 'text',
 			),
 		),
-		'location' => array (
-			array (
-				array (
+		'location' => array(
+			array(
+				array(
 					'param' => 'options_page',
 					'operator' => '==',
 					'value' => 'acf-options',
@@ -333,19 +333,19 @@ if(function_exists("register_field_group"))
 				),
 			),
 		),
-		'options' => array (
+		'options' => array(
 			'position' => 'normal',
 			'layout' => 'no_box',
-			'hide_on_screen' => array (
+			'hide_on_screen' => array(
 			),
 		),
 		'menu_order' => 0,
 	));
-	register_field_group(array (
+	register_field_group(array(
 		'id' => 'acf_resources',
 		'title' => 'Resources',
-		'fields' => array (
-			array (
+		'fields' => array(
+			array(
 				'key' => 'field_51ba50fd91f85',
 				'label' => 'Resource Images',
 				'name' => 'resource_images',
@@ -353,9 +353,9 @@ if(function_exists("register_field_group"))
 				'preview_size' => 'thumbnail',
 			),
 		),
-		'location' => array (
-			array (
-				array (
+		'location' => array(
+			array(
+				array(
 					'param' => 'post_type',
 					'operator' => '==',
 					'value' => 'cgc_resource',
@@ -364,10 +364,10 @@ if(function_exists("register_field_group"))
 				),
 			),
 		),
-		'options' => array (
+		'options' => array(
 			'position' => 'normal',
 			'layout' => 'no_box',
-			'hide_on_screen' => array (
+			'hide_on_screen' => array(
 			),
 		),
 		'menu_order' => 0,
