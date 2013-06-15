@@ -79,7 +79,7 @@ if(function_exists("register_field_group"))
 			array(
 				'key' => 'field_5181334c68d51',
 				'label' => 'Post Video Embed Code',
-				'name' => 'cgc_video_code',
+				'name' => 'cgc_vimeo_code',
 				'type' => 'textarea',
 				'conditional_logic' => array(
 					'status' => 1,
