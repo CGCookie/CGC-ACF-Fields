@@ -372,4 +372,81 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => 0,
 	));
+	register_field_group(array (
+		'id' => 'acf_pricing-page',
+		'title' => 'Pricing Page',
+		'fields' => array (
+			array (
+				'default_value' => 'Join the CG Cookie Network',
+				'formatting' => 'html',
+				'key' => 'field_51bba90c70b1b',
+				'label' => 'First Heading',
+				'name' => 'first_heading',
+				'type' => 'text',
+			),
+			array (
+				'default_value' => 'and become a better CG artist.',
+				'formatting' => 'html',
+				'key' => 'field_51bba92270b1c',
+				'label' => 'Second Heading',
+				'name' => 'second_heading',
+				'type' => 'text',
+			),
+			array (
+				'default_value' => 'Free',
+				'formatting' => 'html',
+				'key' => 'field_51bbac466446c',
+				'label' => 'Free Price',
+				'name' => 'free_price',
+				'type' => 'text',
+			),
+			array (
+				'default_value' => '$18',
+				'formatting' => 'html',
+				'key' => 'field_51bbac536446d',
+				'label' => 'Citizen Price',
+				'name' => 'citizen_price',
+				'type' => 'text',
+			),
+			array (
+				'default_value' => '20% off',
+				'formatting' => 'html',
+				'key' => 'field_51bbac596446e',
+				'label' => 'Group Price',
+				'name' => 'group_price',
+				'type' => 'text',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-pricing.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+				0 => 'the_content',
+				1 => 'excerpt',
+				2 => 'custom_fields',
+				3 => 'discussion',
+				4 => 'comments',
+				5 => 'revisions',
+				6 => 'slug',
+				7 => 'author',
+				8 => 'format',
+				9 => 'featured_image',
+				10 => 'categories',
+				11 => 'tags',
+				12 => 'send-trackbacks',
+			),
+		),
+		'menu_order' => 0,
+	));	
 }
