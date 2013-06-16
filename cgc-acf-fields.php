@@ -249,7 +249,8 @@ if(function_exists("register_field_group"))
 				'label' => 'Featured Posts',
 				'name' => 'featured_posts',
 				'type' => 'relationship',
-			),
+				'instructions' => 'Feature a minimum of two posts and a maximum of 5 posts, but do not feature 3 or 4 posts. - if we want the option to feature 3 or 4 in the future, let\'s make a to-do and I\'ll work on it post launch.',				
+				),
 		),
 		'location' => array(
 			array(
