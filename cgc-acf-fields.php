@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: CGC Widgets
+ * Plugin Name: CGC ACF Fields
  */
 
 
