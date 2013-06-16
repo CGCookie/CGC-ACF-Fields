@@ -234,7 +234,7 @@ if(function_exists("register_field_group"))
 					2 => 'cgc_lessons',
 					2 => 'cgc_resource',
 				),
-				'max' => '',
+				'max' => '5',
 				'taxonomy' => array(
 					0 => 'all',
 				),
