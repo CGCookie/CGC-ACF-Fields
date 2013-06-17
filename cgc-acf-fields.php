@@ -48,7 +48,7 @@ if(function_exists("register_field_group"))
 					'Free' => 'Logged In Users',
 				),
 				'default_value' => 'Regular',
-			),
+			),		
 			array(
 				'key' => 'field_5181332268d50',
 				'label' => 'Post Video',
@@ -57,6 +57,22 @@ if(function_exists("register_field_group"))
 				'message' => 'Does this post have a video?',
 				'default_value' => 0,
 			),
+			array (
+				'multiple' => 0,
+				'allow_null' => 0,
+				'choices' => array (
+					'default' => 'Default',
+					'show' => 'Force Show',
+					'hide' => 'Force Hide',
+				),
+				'default_value' => '',
+				'key' => 'field_51be96ed822f9',
+				'label' => 'FREE Label Override',
+				'name' => 'free_label_override',
+				'type' => 'select',
+				'instructions' => 'The Free label automatically shows if it is a free post, but this option allows you to override this.',
+			),			
+
 /*			array(
 				'key' => 'field_5181334c68d51',
 				'label' => 'Post Video Embed Code',
