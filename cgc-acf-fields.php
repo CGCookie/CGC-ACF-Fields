@@ -230,6 +230,15 @@ if(function_exists("register_field_group"))
 					'group_no' => 3,
 				),
 			),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'comingsoon',
+					'order_no' => 0,
+					'group_no' => 3,
+				),
+			),			
 		),
 		'options' => array(
 			'position' => 'normal',
