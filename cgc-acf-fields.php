@@ -48,7 +48,7 @@ if(function_exists("register_field_group"))
 					'Free' => 'Logged In Users',
 				),
 				'default_value' => 'Regular',
-			),		
+			),
 			array(
 				'key' => 'field_5181332268d50',
 				'label' => 'Post Video',
@@ -71,7 +71,7 @@ if(function_exists("register_field_group"))
 				'name' => 'free_label_override',
 				'type' => 'select',
 				'instructions' => 'The Free label automatically shows if it is a free post, but this option allows you to override this.',
-			),			
+			),
 
 /*			array(
 				'key' => 'field_5181334c68d51',
@@ -248,7 +248,8 @@ if(function_exists("register_field_group"))
 					0 => 'post',
 					1 => 'cgc_courses',
 					2 => 'cgc_lessons',
-					2 => 'cgc_resource',
+					3 => 'cgc_resource',
+					4 => 'comingsoon',
 				),
 				'max' => '5',
 				'taxonomy' => array(
@@ -265,7 +266,7 @@ if(function_exists("register_field_group"))
 				'label' => 'Featured Posts',
 				'name' => 'featured_posts',
 				'type' => 'relationship',
-				'instructions' => 'Feature a minimum of two posts and a maximum of 5 posts, but do not feature 3 or 4 posts. - if we want the option to feature 3 or 4 in the future, let\'s make a to-do and I\'ll work on it post launch.',				
+				'instructions' => 'Feature a minimum of two posts and a maximum of 5 posts, but do not feature 3 or 4 posts. - if we want the option to feature 3 or 4 in the future, let\'s make a to-do and I\'ll work on it post launch.',
 				),
 		),
 		'location' => array(
@@ -466,7 +467,7 @@ if(function_exists("register_field_group"))
 			),
 		),
 		'menu_order' => 0,
-	));	
+	));
 	register_field_group(array (
 		'id' => 'acf_gallery-submission-guidelines',
 		'title' => 'Gallery Submission Guidelines',
