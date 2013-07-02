@@ -131,14 +131,6 @@ if(function_exists("register_field_group"))
 				'formatting' => 'none',
 			),
 			array(
-				'key' => 'field_5181335b68d52',
-				'label' => 'Source Files',
-				'name' => 'source_files',
-				'type' => 'true_false',
-				'message' => 'Does this post have source files available for download?',
-				'default_value' => 0,
-			),
-			array(
 				'key' => 'field_5181338068d53',
 				'label' => 'Source File Links',
 				'name' => 'source_file_links',
@@ -150,7 +142,7 @@ if(function_exists("register_field_group"))
 						'name' => 'file_name',
 						'type' => 'text',
 						'column_width' => '',
-						'default_value' => 'Source Files',
+						'default_value' => 'HD Video',
 						'formatting' => 'text',
 					),
 					array(
