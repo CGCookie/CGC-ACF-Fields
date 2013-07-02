@@ -251,6 +251,7 @@ if(function_exists("register_field_group"))
 					2 => 'cgc_lessons',
 					3 => 'cgc_resource',
 					4 => 'comingsoon',
+					5 => 'cgc_resource_folder',
 				),
 				'max' => '5',
 				'taxonomy' => array(
