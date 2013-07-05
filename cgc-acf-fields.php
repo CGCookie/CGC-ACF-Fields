@@ -503,4 +503,17 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => 0,
 	));
+
+	function acf_default_value_by_post_type( $field ) {
+		global $post;
+
+		$post_type = get_post_type();
+		if ( $post_type == 'cgc_lessons' ) {
+			$field['default_value'] = 'Citizen';
+		}
+
+		return $field;
+	}
+	add_filter('acf/load_field/name=cgc_post_type', 'acf_default_value_by_post_type');	
+	
 }
