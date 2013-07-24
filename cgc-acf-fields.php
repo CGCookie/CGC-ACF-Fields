@@ -162,6 +162,20 @@ if(function_exists("register_field_group"))
 				'button_label' => 'Add File',
 			),
 			array(
+				'key' => 'field_51f02cc8feddb',
+				'label' => 'Download Access Override',
+				'name' => 'download_access_override',
+				'type' => 'select',
+				'choices' => array (
+					'all' => 'force ALL access',
+					'logged-in' => 'force LOGGED IN access',
+					'citizen' => 'force CITIZEN access',
+				),
+				'default_value' => '',
+				'allow_null' => 1,
+				'multiple' => 0,
+			),			
+			array(
 				'key' => 'field_518133dd68d55',
 				'label' => 'Post Image Gallery',
 				'name' => 'cgc_image_gallery',
