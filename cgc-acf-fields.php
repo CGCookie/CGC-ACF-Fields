@@ -207,6 +207,15 @@ if(function_exists("register_field_group"))
 				array(
 					'param' => 'post_type',
 					'operator' => '==',
+					'value' => 'releaselogs',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
 					'value' => 'cgc_courses',
 					'order_no' => 0,
 					'group_no' => 1,
