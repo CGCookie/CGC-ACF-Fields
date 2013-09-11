@@ -31,6 +31,7 @@
 
 if(function_exists("register_field_group"))
 {
+	global $blog_id;	
 	register_field_group(array(
 		'id' => 'acf_additional-post-information',
 		'title' => 'Additional Post Information',
@@ -131,14 +132,6 @@ if(function_exists("register_field_group"))
 				'formatting' => 'none',
 			),
 			array(
-				'key' => 'field_5181335b68d52',
-				'label' => 'Source Files',
-				'name' => 'source_files',
-				'type' => 'true_false',
-				'message' => 'Does this post have source files available for download?',
-				'default_value' => 0,
-			),
-			array(
 				'key' => 'field_5181338068d53',
 				'label' => 'Source File Links',
 				'name' => 'source_file_links',
@@ -150,7 +143,7 @@ if(function_exists("register_field_group"))
 						'name' => 'file_name',
 						'type' => 'text',
 						'column_width' => '',
-						'default_value' => 'Source Files',
+						'default_value' => 'HD Video',
 						'formatting' => 'text',
 					),
 					array(
@@ -168,6 +161,20 @@ if(function_exists("register_field_group"))
 				'layout' => 'table',
 				'button_label' => 'Add File',
 			),
+			array(
+				'key' => 'field_51f02cc8feddb',
+				'label' => 'Download Access Override',
+				'name' => 'download_access_override',
+				'type' => 'select',
+				'choices' => array (
+					'all' => 'force ALL access',
+					'logged-in' => 'force LOGGED IN access',
+					'citizen' => 'force CITIZEN access',
+				),
+				'default_value' => '',
+				'allow_null' => 1,
+				'multiple' => 0,
+			),			
 			array(
 				'key' => 'field_518133dd68d55',
 				'label' => 'Post Image Gallery',
@@ -257,127 +264,133 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => 0,
 	));
-	register_field_group(array(
-		'id' => 'acf_featured-posts',
-		'title' => 'Featured Posts',
-		'fields' => array(
-			array(
-				'post_type' => array(
-					0 => 'post',
-					1 => 'cgc_courses',
-					2 => 'cgc_lessons',
-					3 => 'cgc_resource',
-					4 => 'comingsoon',
-				),
-				'max' => '5',
-				'taxonomy' => array(
-					0 => 'all',
-				),
-				'filters' => array(
-					0 => 'search',
-				),
-				'result_elements' => array(
-					0 => 'post_type',
-					1 => 'post_title',
-				),
-				'key' => 'field_5193fe10e30fc',
-				'label' => 'Featured Posts',
-				'name' => 'featured_posts',
-				'type' => 'relationship',
-				'instructions' => 'Feature a minimum of two posts and a maximum of 5 posts, but do not feature 3 or 4 posts. - if we want the option to feature 3 or 4 in the future, let\'s make a to-do and I\'ll work on it post launch.',
-				),
-		),
-		'location' => array(
-			array(
+	if ($blog_id != 1 ) {
+		register_field_group(array(
+			'id' => 'acf_featured-posts',
+			'title' => 'Featured Posts',
+			'fields' => array(
 				array(
-					'param' => 'options_page',
-					'operator' => '==',
-					'value' => 'acf-options',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
+					'post_type' => array(
+						0 => 'post',
+						1 => 'cgc_courses',
+						2 => 'cgc_lessons',
+						3 => 'cgc_resource',
+						4 => 'comingsoon',
+						5 => 'cgc_resource_folder',
+					),
+					'max' => '5',
+					'taxonomy' => array(
+						0 => 'all',
+					),
+					'filters' => array(
+						0 => 'search',
+					),
+					'result_elements' => array(
+						0 => 'post_type',
+						1 => 'post_title',
+					),
+					'key' => 'field_5193fe10e30fc',
+					'label' => 'Featured Posts',
+					'name' => 'featured_posts',
+					'type' => 'relationship',
+					'instructions' => 'Feature a minimum of two posts and a maximum of 5 posts, but do not feature 3 or 4 posts. - if we want the option to feature 3 or 4 in the future, let\'s make a to-do and I\'ll work on it post launch.',
+					),
 			),
-		),
-		'options' => array(
-			'position' => 'normal',
-			'layout' => 'no_box',
-			'hide_on_screen' => array(
-			),
-		),
-		'menu_order' => 0,
-	));
-	register_field_group(array(
-		'id' => 'acf_social-links',
-		'title' => 'Social Links',
-		'fields' => array(
-			array(
-				'default_value' => '',
-				'formatting' => 'html',
-				'key' => 'field_51b7e8cb8190f',
-				'label' => 'Facebook',
-				'name' => 'facebook_link',
-				'type' => 'text',
-			),
-			array(
-				'default_value' => '',
-				'formatting' => 'html',
-				'key' => 'field_51b7e8ec81910',
-				'label' => 'Twitter',
-				'name' => 'twitter_link',
-				'type' => 'text',
-			),
-			array(
-				'default_value' => '',
-				'formatting' => 'html',
-				'key' => 'field_51b7e8f081911',
-				'label' => 'Youtube',
-				'name' => 'youtube_link',
-				'type' => 'text',
-			),
-			array(
-				'default_value' => '',
-				'formatting' => 'html',
-				'key' => 'field_51b7e8fb81912',
-				'label' => 'Pinterest',
-				'name' => 'pinterest_link',
-				'type' => 'text',
-			),
-			array(
-				'default_value' => '',
-				'formatting' => 'html',
-				'key' => 'field_51b7e90581913',
-				'label' => 'RSS Feed',
-				'name' => 'rss_feed_link',
-				'type' => 'text',
-			),
-			array(
-				'default_value' => '',
-				'formatting' => 'html',
-				'key' => 'field_51b80744b2199',
-				'label' => 'Deviant Art',
-				'name' => 'deviant_art_link',
-				'type' => 'text',
-			),
-		),
-		'location' => array(
-			array(
+			'location' => array(
 				array(
-					'param' => 'options_page',
-					'operator' => '==',
-					'value' => 'acf-options',
-					'order_no' => 0,
-					'group_no' => 0,
+					array(
+						'param' => 'options_page',
+						'operator' => '==',
+						'value' => 'acf-options',
+						'order_no' => 0,
+						'group_no' => 0,
+					),
 				),
 			),
-		),
-		'options' => array(
-			'position' => 'normal',
-			'layout' => 'no_box',
-			'hide_on_screen' => array(
+			'options' => array(
+				'position' => 'normal',
+				'layout' => 'no_box',
+				'hide_on_screen' => array(
+				),
 			),
-		),
-		'menu_order' => 0,
-	));
+			'menu_order' => 0,
+		));
+	}
+	if( $blog_id != 1 )
+	{	
+		register_field_group(array(
+			'id' => 'acf_social-links',
+			'title' => 'Social Links',
+			'fields' => array(
+				array(
+					'default_value' => '',
+					'formatting' => 'html',
+					'key' => 'field_51b7e8cb8190f',
+					'label' => 'Facebook',
+					'name' => 'facebook_link',
+					'type' => 'text',
+				),
+				array(
+					'default_value' => '',
+					'formatting' => 'html',
+					'key' => 'field_51b7e8ec81910',
+					'label' => 'Twitter',
+					'name' => 'twitter_link',
+					'type' => 'text',
+				),
+				array(
+					'default_value' => '',
+					'formatting' => 'html',
+					'key' => 'field_51b7e8f081911',
+					'label' => 'Youtube',
+					'name' => 'youtube_link',
+					'type' => 'text',
+				),
+				array(
+					'default_value' => '',
+					'formatting' => 'html',
+					'key' => 'field_51b7e8fb81912',
+					'label' => 'Pinterest',
+					'name' => 'pinterest_link',
+					'type' => 'text',
+				),
+				array(
+					'default_value' => '',
+					'formatting' => 'html',
+					'key' => 'field_51b7e90581913',
+					'label' => 'RSS Feed',
+					'name' => 'rss_feed_link',
+					'type' => 'text',
+				),
+				array(
+					'default_value' => '',
+					'formatting' => 'html',
+					'key' => 'field_51b80744b2199',
+					'label' => 'Deviant Art',
+					'name' => 'deviant_art_link',
+					'type' => 'text',
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param' => 'options_page',
+						'operator' => '==',
+						'value' => 'acf-options',
+						'order_no' => 0,
+						'group_no' => 0,
+					),
+				),
+			),
+			'options' => array(
+				'position' => 'normal',
+				'layout' => 'no_box',
+				'hide_on_screen' => array(
+				),
+			),
+			'menu_order' => 0,
+		));
+	}
 	register_field_group(array(
 		'id' => 'acf_resources',
 		'title' => 'Resources',
@@ -519,4 +532,202 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => 0,
 	));
+	if( $blog_id == 1 )
+	{
+		register_field_group(array (
+			'id' => 'acf_hub-logged-out',
+			'title' => 'Hub Logged Out',
+			'fields' => array (
+				array (
+					'key' => 'field_51ef0c2c7885f',
+					'label' => 'Hub Logged Out',
+					'name' => '',
+					'type' => 'message',
+					'message' => '<h1>Hub Logged Out Content</h1>',
+				),
+				array (
+					'key' => 'field_51ef149c2e79a',
+					'label' => 'Intro Heading',
+					'name' => 'intro_heading',
+					'type' => 'text',
+					'default_value' => '',
+					'formatting' => 'html',
+				),
+				array (
+					'key' => 'field_51ef14a92e79b',
+					'label' => 'Intro Subheading',
+					'name' => 'intro_subheading',
+					'type' => 'text',
+					'default_value' => '',
+					'formatting' => 'html',
+				),
+				array (
+					'key' => 'field_51ef14bf2e79c',
+					'label' => 'Intro Content',
+					'name' => 'intro_content',
+					'type' => 'wysiwyg',
+					'default_value' => '',
+					'toolbar' => 'basic',
+					'media_upload' => 'no',
+				),
+				array (
+					'key' => 'field_51ef14ce2e79d',
+					'label' => 'Intro Button Text',
+					'name' => 'intro_button_text',
+					'type' => 'text',
+					'default_value' => '',
+					'formatting' => 'html',
+				),
+				array (
+					'key' => 'field_51eef3b649015',
+					'label' => 'Home Callouts Top Heading',
+					'name' => 'home_call_outs_top_heading',
+					'type' => 'text',
+					'default_value' => '',
+					'formatting' => 'none',
+				),
+				array (
+					'key' => 'field_51eef2c84900d',
+					'label' => 'Home Call Outs',
+					'name' => 'home_call_outs',
+					'type' => 'repeater',
+					'sub_fields' => array (
+						array (
+							'key' => 'field_51eef2dc4900e',
+							'label' => 'Title',
+							'name' => 'title',
+							'type' => 'text',
+							'column_width' => '',
+							'default_value' => '',
+							'formatting' => 'html',
+						),
+						array (
+							'key' => 'field_51eef2e44900f',
+							'label' => 'Image',
+							'name' => 'image',
+							'type' => 'image',
+							'instructions' => 'upload an image with the dimensions of 900x545',
+							'column_width' => '',
+							'save_format' => 'url',
+							'preview_size' => 'full',
+							'library' => 'all',
+						),
+						array (
+							'key' => 'field_51eef32c49010',
+							'label' => 'Image Placement',
+							'name' => 'image_placement',
+							'type' => 'radio',
+							'column_width' => '',
+							'choices' => array (
+								'image-left' => 'Left',
+								'image-right' => 'Right',
+							),
+							'other_choice' => 0,
+							'save_other_choice' => 0,
+							'default_value' => 'image-left',
+							'layout' => 'vertical',
+						),
+						array (
+							'key' => 'field_51eef35549011',
+							'label' => 'Image Link',
+							'name' => 'image_link',
+							'type' => 'text',
+							'column_width' => '',
+							'default_value' => '',
+							'formatting' => 'html',
+						),
+						array (
+							'key' => 'field_51eef36349012',
+							'label' => 'Image Link Title',
+							'name' => 'image_link_title',
+							'type' => 'text',
+							'column_width' => '',
+							'default_value' => '',
+							'formatting' => 'html',
+						),
+						array (
+							'key' => 'field_51eef37949014',
+							'label' => 'Image Link Hover Color',
+							'name' => 'image_link_hover_color',
+							'type' => 'select',
+							'column_width' => '',
+							'choices' => array (
+								'cgcookie' => 'Hub',
+								'blendercookie' => 'Blender',
+								'maxcookie' => 'Max',
+								'modocookie' => 'Modo',
+								'conceptcookie' => 'Concept',
+								'unitycookie' => 'Unity',
+							),
+							'default_value' => 'cgcookie',
+							'allow_null' => 0,
+							'multiple' => 0,
+						),
+						array (
+							'key' => 'field_51eef37149013',
+							'label' => 'Content',
+							'name' => 'content',
+							'type' => 'wysiwyg',
+							'column_width' => '',
+							'default_value' => '',
+							'toolbar' => 'basic',
+							'media_upload' => 'no',
+						),
+					),
+					'row_min' => 0,
+					'row_limit' => '',
+					'layout' => 'row',
+					'button_label' => 'Add Callout',
+				),
+				array (
+					'key' => 'field_51eef3c849016',
+					'label' => 'Home Call Outs Bottom Heading',
+					'name' => 'home_call_outs_bottom_heading',
+					'type' => 'text',
+					'default_value' => '',
+					'formatting' => 'html',
+				),
+				array (
+					'key' => 'field_51eef3d049017',
+					'label' => 'Home Bottom Button Text',
+					'name' => 'home_bottom_button_text',
+					'type' => 'text',
+					'default_value' => '',
+					'formatting' => 'html',
+				),
+			),
+			'location' => array (
+				array (
+					array (
+						'param' => 'options_page',
+						'operator' => '==',
+						'value' => 'acf-options',
+						'order_no' => 0,
+						'group_no' => 0,
+					),
+				),
+			),
+			'options' => array (
+				'position' => 'normal',
+				'layout' => 'no_box',
+				'hide_on_screen' => array (
+				),
+			),
+			'menu_order' => 0,
+		));
+	}
+
+
+	function acf_default_value_by_post_type( $field ) {
+		global $post;
+
+		$post_type = get_post_type();
+		if ( $post_type == 'cgc_lessons' ) {
+			$field['default_value'] = 'Citizen';
+		}
+
+		return $field;
+	}
+	add_filter('acf/load_field/name=cgc_post_type', 'acf_default_value_by_post_type');	
+	
 }
