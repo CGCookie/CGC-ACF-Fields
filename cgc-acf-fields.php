@@ -315,7 +315,41 @@ if ( function_exists( "register_field_group" ) ) {
 				),
 			),
 			'menu_order' => 0,
-		));		
+		));
+		register_field_group(array (
+			'id' => 'acf_generic-cta-message',
+			'title' => 'Generic CTA Message',
+			'fields' => array (
+				array (
+					'key' => 'field_5294d7dd314c9',
+					'label' => 'Generic CTA Message',
+					'name' => 'generic_cta_message',
+					'type' => 'textarea',
+					'default_value' => '',
+					'placeholder' => '',
+					'maxlength' => '',
+					'formatting' => 'html',
+				),
+			),
+			'location' => array (
+				array (
+					array (
+						'param' => 'options_page',
+						'operator' => '==',
+						'value' => 'acf-options',
+						'order_no' => 0,
+						'group_no' => 0,
+					),
+				),
+			),
+			'options' => array (
+				'position' => 'normal',
+				'layout' => 'no_box',
+				'hide_on_screen' => array (
+				),
+			),
+			'menu_order' => 0,
+		));	
 		register_field_group( array(
 				'id' => 'acf_featured-posts',
 				'title' => 'Featured Posts',
